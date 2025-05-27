@@ -54,139 +54,64 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
+            font-family: Georgia, Cambria, "Times New Roman", Times, serif; /* Serif for body text */
+            font-size: 18px; /* Base font size */
+            line-height: 1.7; /* Generous line height */
+            color: #333333; /* Dark gray for text */
             overflow-x: hidden;
-            background-color: var(--light-bg);
+            background-color: #f8f9fa; /* Simple, light, professional color */
         }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Sans-serif for headings */
+            font-weight: 600; /* Bolder headings */
+            color: #212529; /* Slightly darker for headings */
+            margin-bottom: 0.75rem; /* Default bottom margin */
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+        h2 { font-size: 2rem; margin-bottom: 1.25rem; }
+        h3 { font-size: 1.75rem; margin-bottom: 1rem; }
+        h4 { font-size: 1.5rem; }
+        h5 { font-size: 1.25rem; }
+        h6 { font-size: 1rem; }
+
 
         .perspective-1000 {
             perspective: 1000px;
         }
 
-        body::before {
-            content: '';
-            position: fixed;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, var(--primary-color) 0%, transparent 20%),
-                        radial-gradient(circle at 70% 30%, var(--secondary-color) 0%, transparent 15%),
-                        radial-gradient(circle at 30% 70%, var(--accent-color) 0%, transparent 25%),
-                        radial-gradient(circle at 90% 80%, var(--tertiary-color) 0%, transparent 15%);
-            opacity: 0.08;
-            z-index: -1;
-            animation: gradientMove 60s ease infinite alternate;
-        }
+        /* Removed body::before pseudo-element styling */
 
-        @keyframes gradientMove {
-            0% { transform: translate(0, 0); }
-            50% { transform: translate(-5%, -5%); }
-            100% { transform: translate(5%, 5%); }
-        }
-
-        /* Glass effect for cards */
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            box-shadow: var(--glass-shadow);
-        }
+        /* Removed .glass-card styling */
 
         .container {
             width: 100%;
-            max-width: 1280px;
-            padding-left: 2rem;
-            padding-right: 2rem;
+            max-width: 1100px; /* Adjusted max-width */
+            padding-left: 1rem; /* Adjusted padding */
+            padding-right: 1rem; /* Adjusted padding */
+            margin-left: auto; /* Center align */
+            margin-right: auto; /* Center align */
         }
 
         .hero {
-            background: var(--gradient-primary);
-            background-size: 400% 400%;
-            animation: gradient-shift 15s ease infinite;
-            min-height: 100vh;
+            /* background: var(--gradient-primary); */ /* Removed gradient */
+            /* background-size: 400% 400%; */
+            /* animation: gradient-shift 15s ease infinite; */
+            background-color: #e9ecef; /* Light gray background for hero, or a subtle texture/image */
+            min-height: auto; /* Adjust height as needed, maybe not full viewport */
+            padding-top: 8rem; /* Add padding */
+            padding-bottom: 4rem; /* Add padding */
             display: flex;
             align-items: center;
-            color: white;
+            color: #333; /* Adjusted text color for better readability on light bg */
             position: relative;
             overflow: hidden;
         }
 
-        /* Animated background elements */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image:
-                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 30%),
-                radial-gradient(circle at 40% 70%, rgba(245, 158, 11, 0.3) 0%, transparent 25%),
-                radial-gradient(circle at 70% 90%, rgba(6, 182, 212, 0.3) 0%, transparent 15%);
-            z-index: 1;
-            animation: pulse 10s ease infinite alternate;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 0.7; }
-            100% { opacity: 1; }
-        }
-
-        .floating-shapes {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 2;
-        }
-
-        .shape {
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            animation: float 20s linear infinite;
-        }
-
-        .shape:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-            animation-duration: 25s;
-        }
-
-        .shape:nth-child(2) {
-            width: 120px;
-            height: 120px;
-            top: 60%;
-            left: 70%;
-            animation-delay: 2s;
-            animation-duration: 30s;
-        }
-
-        .shape:nth-child(3) {
-            width: 60px;
-            height: 60px;
-            top: 40%;
-            left: 80%;
-            animation-delay: 4s;
-            animation-duration: 20s;
-        }
-
-        .shape:nth-child(4) {
-            width: 100px;
-            height: 100px;
-            top: 70%;
-            left: 30%;
-            animation-delay: 6s;
-            animation-duration: 28s;
-        }
+        /* Removed .hero::before (animated background elements) */
+        /* Removed @keyframes pulse */
+        /* Removed .floating-shapes and .shape styles */
 
         .animate-float {
             animation: float 3s ease-in-out infinite;
@@ -241,36 +166,10 @@
             100% { opacity: 0.6; transform: scale(1); }
         }
 
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            background: #fff;
-            clip-path: polygon(0 100%, 100% 100%, 100% 0);
-        }
+        /* Removed .hero::after (diagonal cut) */
 
-        .section-heading {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 2rem;
-            padding-bottom: 0.5rem;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text-color);
-        }
-
-        .section-heading::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--primary-color);
-        }
+        /* .section-heading class and its ::after pseudo-element are no longer used. 
+           Section headings are styled directly or using base h1-h6 styles. */
 
         .skill-bar {
             height: 10px;
@@ -303,28 +202,16 @@
         }
 
         .testimonial-card {
-            transition: var(--transition);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            height: 100%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-            position: relative;
+            /* transition: var(--transition); */ /* Removed transition */
+            /* border-radius: var(--border-radius); */ /* Removed border-radius */
+            /* overflow: hidden; */ /* Kept for potential internal structure, can be removed if not needed */
+            /* height: 100%; */ /* Removed fixed height */
+            /* box-shadow: 0 5px 15px rgba(0,0,0,0.03); */ /* Removed box-shadow */
+            position: relative; /* Kept for potential internal structure */
         }
 
-        .testimonial-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--box-shadow);
-        }
-
-        .testimonial-card::before {
-            content: '\201C';
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 5rem;
-            color: rgba(137, 37, 62, 0.1);
-            font-family: serif;
-        }
+        /* Removed .testimonial-card:hover */
+        /* Removed .testimonial-card::before */
 
         .social-icon {
             width: 40px;
@@ -391,18 +278,17 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
+        /* Adjusted .card styling to be more generic or removed if not needed for general layout */
         .card {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-            transition: var(--transition);
-            height: 100%;
+            background: none; 
+            border: none; 
+            box-shadow: none; 
+            border-radius: 0; 
+            overflow: visible; 
+            transition: none; 
+            height: auto; 
         }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--box-shadow);
-        }
+        /* Removed .card:hover styling */
 
         @media (max-width: 768px) {
             .container {
@@ -423,22 +309,22 @@
 </head>
 <body>
     <!-- Header & Navigation -->
-    <header class="fixed w-full bg-white shadow-lg z-50 transition-all duration-300">
+    <header class="fixed w-full bg-white z-50 transition-all duration-300" style="box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
         <div class="container mx-auto">
-            <nav class="flex justify-between items-center py-4">
+            <nav class="flex justify-between items-center py-3"> /* Adjusted padding */
                 <a href="#" class="text-2xl font-bold text-gray-800 flex items-center">
-                    <span class="text-primary-color">P</span>KM
+                    <span class="text-gray-700">P</span>KM /* Adjusted color */
                 </a>
 
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link text-gray-600 hover:text-primary-color transition-colors">Home</a>
-                    <a href="#about" class="nav-link text-gray-600 hover:text-primary-color transition-colors">About</a>
-                    <a href="#work" class="nav-link text-gray-600 hover:text-primary-color transition-colors">Work</a>
-                    <a href="#services" class="nav-link text-gray-600 hover:text-primary-color transition-colors">Services</a>
-                    <a href="#achievements" class="nav-link text-gray-600 hover:text-primary-color transition-colors">Achievements</a>
-                    <a href="#testimonials" class="nav-link text-gray-600 hover:text-primary-color transition-colors">Testimonials</a>
-                    <a href="#contact" class="btn bg-gradient-to-r from-secondary-color to-primary-color text-white px-6 py-2 rounded-full hover:shadow-lg transition-all">Contact</a>
+                <div class="hidden md:flex items-center space-x-6"> /* Adjusted spacing */
+                    <a href="#home" class="nav-link text-gray-700 hover:text-gray-900 transition-colors text-base">Home</a> /* Adjusted colors & size */
+                    <a href="#about" class="nav-link text-gray-700 hover:text-gray-900 transition-colors text-base">About</a> /* Adjusted colors & size */
+                    <a href="#work" class="nav-link text-gray-700 hover:text-gray-900 transition-colors text-base">Work</a> /* Adjusted colors & size */
+                    <a href="#services" class="nav-link text-gray-700 hover:text-gray-900 transition-colors text-base">Services</a> /* Adjusted colors & size */
+                    <a href="#achievements" class="nav-link text-gray-700 hover:text-gray-900 transition-colors text-base">Achievements</a> /* Adjusted colors & size */
+                    <a href="#testimonials" class="nav-link text-gray-700 hover:text-gray-900 transition-colors text-base">Testimonials</a> /* Adjusted colors & size */
+                    <a href="#contact" class="text-white bg-gray-700 hover:bg-gray-800 px-5 py-2 rounded-md transition-colors text-sm font-medium">Contact</a> /* Simplified button */
                 </div>
 
                 <!-- Mobile Navigation Toggle -->
@@ -452,254 +338,88 @@
             </nav>
 
             <!-- Mobile Navigation Menu -->
-            <div id="mobile-menu" class="md:hidden hidden bg-white py-4 shadow-inner">
-                <div class="flex flex-col space-y-3">
-                    <a href="#home" class="text-gray-600 hover:text-primary-color px-4 py-2 transition-colors">Home</a>
-                    <a href="#about" class="text-gray-600 hover:text-primary-color px-4 py-2 transition-colors">About</a>
-                    <a href="#work" class="text-gray-600 hover:text-primary-color px-4 py-2 transition-colors">Work</a>
-                    <a href="#services" class="text-gray-600 hover:text-primary-color px-4 py-2 transition-colors">Services</a>
-                    <a href="#achievements" class="text-gray-600 hover:text-primary-color px-4 py-2 transition-colors">Achievements</a>
-                    <a href="#testimonials" class="text-gray-600 hover:text-primary-color px-4 py-2 transition-colors">Testimonials</a>
-                    <a href="#contact" class="text-gray-600 hover:text-primary-color px-4 py-2 transition-colors">Contact</a>
+            <div id="mobile-menu" class="md:hidden hidden bg-white py-3 shadow-md border-t border-gray-200"> /* Adjusted padding & styling */
+                <div class="flex flex-col space-y-2"> /* Adjusted spacing */
+                    <a href="#home" class="text-gray-700 hover:bg-gray-100 px-4 py-2 transition-colors text-base">Home</a> /* Adjusted colors & size */
+                    <a href="#about" class="text-gray-700 hover:bg-gray-100 px-4 py-2 transition-colors text-base">About</a> /* Adjusted colors & size */
+                    <a href="#work" class="text-gray-700 hover:bg-gray-100 px-4 py-2 transition-colors text-base">Work</a> /* Adjusted colors & size */
+                    <a href="#services" class="text-gray-700 hover:bg-gray-100 px-4 py-2 transition-colors text-base">Services</a> /* Adjusted colors & size */
+                    <a href="#achievements" class="text-gray-700 hover:bg-gray-100 px-4 py-2 transition-colors text-base">Achievements</a> /* Adjusted colors & size */
+                    <a href="#testimonials" class="text-gray-700 hover:bg-gray-100 px-4 py-2 transition-colors text-base">Testimonials</a> /* Adjusted colors & size */
+                    <a href="#contact" class="text-gray-700 hover:bg-gray-100 px-4 py-2 transition-colors text-base">Contact</a> /* Adjusted colors & size */
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
-        <!-- Main background gradient -->
-        <div class="absolute top-0 left-0 w-full h-full" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); opacity: 0.9;"></div>
-
-        <!-- Diagonal cut overlay -->
-        <div class="absolute -bottom-1/2 right-0 w-full h-full bg-white opacity-10" style="transform: skewY(-12deg); transform-origin: bottom right;"></div>
-        <div class="absolute -top-1/2 left-0 w-full h-full bg-blue-900 opacity-20" style="transform: skewY(8deg); transform-origin: top left;"></div>
-
-        <!-- Dark overlay for better text contrast -->
-        <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40"></div>
-
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center justify-between">
-                <div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
-                    <div>
-                        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">Prabhakar Kumar Machvey</h1>
-
-                        <h2 class="text-2xl md:text-3xl mb-8 font-light text-white">
-                            Author | Speaker | Educator | Youth Leader
-                        </h2>
-
-                        <div class="mb-10 text-white">
-                            <p class="text-lg mb-2">राष्ट्रीय युवा संसद महोत्सव बिहार प्रतिनिधि वक्ता 2024 🇮🇳</p>
-                            <p class="text-lg">बिहार छात्र संसद - Youth Convenor | Author - उसकी हसरत है</p>
-                        </div>
-
-                        <div class="flex justify-center lg:justify-start space-x-4">
-                            <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition shadow-md">
-                                <i class="fas fa-envelope mr-2"></i> Contact Me
-                            </a>
-                            <a href="#work" class="border border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-blue-600 transition">
-                                <i class="fas fa-briefcase mr-2"></i> My Work
-                            </a>
-                        </div>
-
-                        <!-- Social Media Icons -->
-                        <div class="mt-10">
-                            <div class="flex justify-center lg:justify-start space-x-4">
-                                <a href="#" class="social-icon hover:bg-blue-700">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="#" class="social-icon hover:bg-blue-700">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" class="social-icon hover:bg-blue-700">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="#" class="social-icon hover:bg-blue-700">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                            </div>
-                        </div>
+    <section id="home" class="hero">
+        <div class="container mx-auto px-4 md:px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-gray-800">Prabhakar Kumar Machvey</h1> <!-- Adjusted responsive font size -->
+                <h2 class="text-lg sm:text-xl md:text-2xl mb-8 font-light text-gray-600"> <!-- Adjusted responsive font size -->
+                    Author | Speaker | Educator | Youth Leader
+                </h2>
+                <div class="mb-10 text-gray-700">
+                    <p class="text-base md:text-lg mb-2">राष्ट्रीय युवा संसद महोत्सव बिहार प्रतिनिधि वक्ता 2024 🇮🇳</p> <!-- Standardized text size -->
+                    <p class="text-base md:text-lg">बिहार छात्र संसद - Youth Convenor | Author - उसकी हसरत है</p> <!-- Standardized text size -->
+                </div>
+                <div class="flex flex-col sm:flex-row justify-center items-center sm:space-x-4 space-y-4 sm:space-y-0 mb-10"> <!-- Stack buttons on small screens -->
+                    <a href="#contact" class="bg-gray-800 text-white px-7 py-3 rounded-md font-semibold hover:bg-gray-700 transition-colors shadow-md text-base"> <!-- Unified button style -->
+                        <i class="fas fa-envelope mr-2"></i> Contact Me
+                    </a>
+                    <a href="#work" class="border-2 border-gray-800 text-gray-800 px-7 py-3 rounded-md font-semibold hover:bg-gray-200 transition-colors shadow-md text-base"> <!-- Unified button style -->
+                        <i class="fas fa-briefcase mr-2"></i> My Work
+                    </a>
+                </div>
+                <div class="mt-10"> <!-- Increased mt -->
+                    <div class="flex justify-center space-x-4"> <!-- Unified social icon spacing -->
+                        <a href="#" class="w-11 h-11 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="#" class="w-11 h-11 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="w-11 h-11 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="w-11 h-11 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </div>
                 </div>
-
-                <div class="lg:w-1/2 flex justify-center">
-                    <div class="relative">
-                        <!-- Professional image frame with shadow and border -->
-                        <div class="bg-white p-3 rounded-lg shadow-xl transform rotate-3">
-                            <div class="relative w-80 h-96 rounded-lg overflow-hidden">
-                                <!-- Image -->
-                                <img src="assets/img/profile.jpg" alt="Prabhakar Kumar Machvey" class="w-full h-full object-cover object-center">
-
-                                <!-- Caption overlay -->
-                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
-                                    <p class="text-white text-center font-medium">Prabhakar Kumar Machvey</p>
-                                    <p class="text-white/80 text-center text-sm">Author & Youth Leader</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Achievement badge -->
-                        <div class="absolute -bottom-4 -right-4 bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
-                            <i class="fas fa-award text-white text-2xl"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Scroll Down Indicator -->
-            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
-                <a href="#about" class="text-white opacity-80 hover:opacity-100 transition-opacity">
-                    <i class="fas fa-chevron-down text-2xl"></i>
-                </a>
             </div>
         </div>
     </section>
-<!-- Initiatives & Impact Section - Minimalistic Style -->
-<section id="initiatives" class="py-24 relative overflow-hidden">
-    <!-- Clean gradient background like Home section -->
-    <div class="absolute inset-0" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); opacity: 0.9;"></div>
-
-    <!-- Subtle overlay for better text contrast -->
-    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-
-    <!-- Section header with minimalistic style -->
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Initiatives & Impact</h2>
-            <p class="text-xl font-light text-white/90">Creating positive change through meaningful initiatives</p>
-        </div>
-
-        <!-- Clean, direct presentation of initiatives -->
-        <div class="max-w-4xl mx-auto space-y-24">
-            <div class="text-center">
-                <h3 class="text-3xl md:text-4xl font-bold text-white mb-2">Bihar Chhatra Sansad</h3>
-                <p class="text-xl font-light text-white/90 mb-4">Youth Parliament Initiative</p>
-                <div class="w-20 h-1 bg-white/70 mb-6 mx-auto"></div>
-
-                <p class="text-white leading-relaxed text-lg mb-6">
-                    A youth parliament initiative that provides a platform for students to engage in meaningful discussions on social, political, and economic issues affecting Bihar and India. Through this program, young leaders are nurtured and empowered to become change-makers. Key aspects include policy discussions, youth engagement, and leadership development.
-                </p>
-
-                <div class="flex justify-center">
-                    <a href="#" class="bg-white text-blue-600 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition shadow-md flex items-center">
-                        <span>Learn More</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="text-center">
-                <h3 class="text-3xl md:text-4xl font-bold text-white mb-2">National Youth Parliament</h3>
-                <p class="text-xl font-light text-white/90 mb-4">National Leadership Program</p>
-                <div class="w-20 h-1 bg-white/70 mb-6 mx-auto"></div>
-
-                <p class="text-white leading-relaxed text-lg mb-6">
-                    A national platform that brings together young leaders from across India to discuss and debate on issues of national importance. This initiative aims to strengthen democratic values and foster a sense of civic responsibility among the youth.
-                </p>
-
-                <div class="flex justify-center">
-                    <a href="#" class="bg-white text-blue-600 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition shadow-md flex items-center">
-                        <span>Learn More</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="text-center">
-                <h3 class="text-3xl md:text-4xl font-bold text-white mb-2">Educational Initiatives</h3>
-                <p class="text-xl font-light text-white/90 mb-4">Quality Education for All</p>
-                <div class="w-20 h-1 bg-white/70 mb-6 mx-auto"></div>
-
-                <p class="text-white leading-relaxed text-lg mb-6">
-                    Founding Deep Classes Machvey to provide accessible, quality education to students, with a special focus on helping underprivileged students achieve academic excellence through innovative teaching methods.
-                </p>
-
-                <div class="flex justify-center">
-                    <a href="#" class="bg-white text-blue-600 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition shadow-md flex items-center">
-                        <span>Learn More</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-     <!-- Impact Statistics Section with Sharp Design -->
-        <div class="relative">
-            <div class="absolute inset-0 bg-gradient-to-r from-indigo-800 to-blue-800 clip-path-zigzag"></div>
-            <div class="relative z-10 py-10 px-6">
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-white mb-2">1000+</div>
-                        <div class="w-16 h-1 bg-indigo-400 mx-auto mb-2"></div>
-                        <p class="text-white">Youth Participants</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-white mb-2">20+</div>
-                        <div class="w-16 h-1 bg-indigo-400 mx-auto mb-2"></div>
-                        <p class="text-white">Community Programs</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-white mb-2">50+</div>
-                        <div class="w-16 h-1 bg-indigo-400 mx-auto mb-2"></div>
-                        <p class="text-white">Leadership Workshops</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-white mb-2">5+</div>
-                        <div class="w-16 h-1 bg-indigo-400 mx-auto mb-2"></div>
-                        <p class="text-white">Years of Impact</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
     <!-- About Section -->
-    <section id="about" class="py-24 relative overflow-hidden">
-        <!-- Main background gradient -->
-        <div class="absolute top-0 left-0 w-full h-full" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); opacity: 0.9;"></div>
-
-        <!-- Diagonal cut overlay -->
-        <div class="absolute -bottom-1/2 right-0 w-full h-full bg-white opacity-10" style="transform: skewY(-12deg); transform-origin: bottom right;"></div>
-        <div class="absolute -top-1/2 left-0 w-full h-full bg-blue-900 opacity-20" style="transform: skewY(8deg); transform-origin: top left;"></div>
-
-        <!-- Dark overlay for better text contrast -->
-        <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40"></div>
-
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-16">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">About Prabhakar Kumar Machvey</h1>
-                <h2 class="text-2xl md:text-3xl mb-8 font-light text-white">
+    <section id="about" class="py-16 md:py-20">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mt-8 mb-4">About Prabhakar Kumar Machvey</h2> <!-- Adjusted responsive font size -->
+                <p class="text-lg sm:text-xl md:text-2xl mb-6 font-light text-gray-600"> <!-- Adjusted responsive font size -->
                     Personal Journey & Professional Background
-                </h2>
-                <div class="w-32 h-1 bg-white mx-auto mb-8"></div>
-                <p class="text-white max-w-3xl mx-auto text-xl">A multifaceted personality known for contributions as an author, educator, poet, and youth leader</p>
+                </p>
+                <p class="text-gray-700 max-w-3xl mx-auto text-base md:text-lg mb-6">A multifaceted personality known for contributions as an author, educator, poet, and youth leader</p> <!-- Standardized text size -->
             </div>
 
-            <!-- Creative About Section with Diagonal Design -->
+            <!-- Creative About Section with Diagonal Design - Neutralize these styles -->
             <div class="relative">
-                <!-- Decorative elements -->
-                <div class="absolute top-20 right-10 w-60 h-60 rounded-full bg-blue-500/20 blur-3xl"></div>
-                <div class="absolute bottom-20 left-10 w-60 h-60 rounded-full bg-indigo-500/20 blur-3xl"></div>
+                <!-- Removed decorative elements -->
 
-                <!-- Main Biography Section with Diagonal Design -->
-                <div class="relative mb-16">
-                    <!-- Diagonal background strip -->
-                    <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-700/80 transform -skew-y-3 shadow-xl"></div>
-
-                    <div class="relative z-10 py-16 px-6 md:px-10">
-                        <div class="max-w-6xl mx-auto">
-                            <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
-                                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 flex-shrink-0 flex items-center justify-center shadow-lg transform hover:rotate-12 transition-transform duration-500">
-                                    <i class="fas fa-book-reader text-white text-4xl"></i>
+                <!-- Main Biography Section - Neutralize these styles -->
+                <div class="mb-12 md:mb-16"> <!-- Adjusted margin -->
+                    <!-- Removed diagonal background strip -->
+                    <div class="py-8 md:py-12 px-4 md:px-6"> <!-- Adjusted padding -->
+                        <div class="max-w-4xl mx-auto"> <!-- Constrain width for readability -->
+                            <div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8">
+                                <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center shadow-sm"> <!-- Simplified icon container -->
+                                    <i class="fas fa-book-reader text-gray-600 text-3xl md:text-4xl"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-md">The Journey</h3>
-                                    <div class="w-24 h-1.5 bg-white mb-6 rounded-full"></div>
-                                    <div class="prose prose-lg max-w-none">
-                                        <p class="text-white leading-relaxed text-lg md:text-xl drop-shadow-sm">
+                                <div>
+                                    <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-4">The Journey</h3> <!-- Adjusted responsive font size -->
+                                    <div class="prose prose-lg max-w-none text-gray-700">
+                                        <p class="leading-relaxed text-base md:text-lg mb-4"> 
                                             Prabhakar Kumar Machvey is a multifaceted personality known for his contributions as an author, educator, poet, and youth leader. Born and raised in Bihar, he has established himself as a prominent voice in the educational and youth development sector.
                                         </p>
                                     </div>
@@ -709,153 +429,125 @@
                     </div>
                 </div>
 
-                <!-- Key Contributions Section with Creative Layout -->
-                <div class="relative z-10 max-w-6xl mx-auto px-6 -mt-8">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Key Contributions Section -->
+                <div class="max-w-5xl mx-auto px-4 md:px-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> 
                         <!-- Educational Vision -->
-                        <div class="relative overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
-                            <!-- Background with border highlight -->
-                            <div class="absolute inset-0 bg-gradient-to-br from-indigo-400/80 to-blue-400/80 rounded-xl"></div>
-                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-indigo-500"></div>
-
-                            <div class="relative p-8">
-                                <div class="flex items-start mb-6">
-                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mr-5 shadow-lg">
-                                        <i class="fas fa-chalkboard-teacher text-white text-2xl"></i>
-                                    </div>
-                                    <h4 class="text-2xl font-bold text-white mt-2">Educational Vision</h4>
+                        <div class="p-0"> 
+                            <div class="flex items-start mb-3"> 
+                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gray-200 flex items-center justify-center mr-4 shadow-sm">
+                                    <i class="fas fa-chalkboard-teacher text-gray-600 text-xl md:text-2xl"></i>
                                 </div>
-                                <p class="text-white leading-relaxed text-lg">
-                                    As an educator, Prabhakar founded <span class="font-semibold text-blue-300">Deep Classes Machvey</span>, an educational initiative designed to help students prepare for board exams and competitive examinations. His teaching methodology transcends conventional learning, making complex subjects accessible and engaging for students.
-                                </p>
+                                <h4 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mt-1 md:mt-2">Educational Vision</h4> <!-- Adjusted responsive font size -->
                             </div>
+                            <p class="text-gray-700 leading-relaxed text-base md:text-lg mb-4"> 
+                                As an educator, Prabhakar founded <span class="font-semibold text-gray-700">Deep Classes Machvey</span>, an educational initiative designed to help students prepare for board exams and competitive examinations. His teaching methodology transcends conventional learning, making complex subjects accessible and engaging for students.
+                            </p>
                         </div>
 
                         <!-- Literary Contributions -->
-                        <div class="relative overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
-                            <!-- Background with border highlight -->
-                            <div class="absolute inset-0 bg-gradient-to-br from-indigo-800/90 to-indigo-900/90 rounded-xl"></div>
-                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-400 to-purple-500"></div>
-
-                            <div class="relative p-8">
-                                <div class="flex items-start mb-6">
-                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center mr-5 shadow-lg">
-                                        <i class="fas fa-book text-white text-2xl"></i>
-                                    </div>
-                                    <h4 class="text-2xl font-bold text-white mt-2">Literary Contributions</h4>
+                        <div class="p-0">
+                            <div class="flex items-start mb-3">
+                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gray-200 flex items-center justify-center mr-4 shadow-sm">
+                                    <i class="fas fa-book text-gray-600 text-xl md:text-2xl"></i>
                                 </div>
-                                <p class="text-white leading-relaxed text-lg">
-                                    Beyond academics, Prabhakar is a published author with his book <span class="italic text-indigo-300">"Uski Hasrat Hai..."</span> receiving positive reviews. He is also recognized for his oratory skills, having represented Bihar in the prestigious National Youth Parliament Festival 2024.
-                                </p>
+                                <h4 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mt-1 md:mt-2">Literary Contributions</h4>
                             </div>
+                            <p class="text-gray-700 leading-relaxed text-base md:text-lg mb-4">
+                                Beyond academics, Prabhakar is a published author with his book <span class="italic text-gray-700">"Uski Hasrat Hai..."</span> receiving positive reviews. He is also recognized for his oratory skills, having represented Bihar in the prestigious National Youth Parliament Festival 2024.
+                            </p>
                         </div>
 
                         <!-- Youth Leadership -->
-                        <div class="relative overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
-                            <!-- Background with border highlight -->
-                            <div class="absolute inset-0 bg-gradient-to-br from-blue-900/90 to-indigo-800/90 rounded-xl"></div>
-                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-300"></div>
-
-                            <div class="relative p-8">
-                                <div class="flex items-start mb-6">
-                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center mr-5 shadow-lg">
-                                        <i class="fas fa-users text-white text-2xl"></i>
-                                    </div>
-                                    <h4 class="text-2xl font-bold text-white mt-2">Youth Leadership</h4>
+                        <div class="p-0">
+                            <div class="flex items-start mb-3">
+                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gray-200 flex items-center justify-center mr-4 shadow-sm">
+                                    <i class="fas fa-users text-gray-600 text-xl md:text-2xl"></i>
                                 </div>
-                                <p class="text-white leading-relaxed text-lg">
-                                    His commitment to youth empowerment is evident in his role as Youth Convenor for Bihar Chhatra Sansad, where he works towards connecting motivated students and fostering collaboration for positive change in society. Through this platform, he nurtures future leaders and change-makers.
-                                </p>
+                                <h4 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mt-1 md:mt-2">Youth Leadership</h4>
                             </div>
+                            <p class="text-gray-700 leading-relaxed text-base md:text-lg mb-4">
+                                His commitment to youth empowerment is evident in his role as Youth Convenor for Bihar Chhatra Sansad, where he works towards connecting motivated students and fostering collaboration for positive change in society. Through this platform, he nurtures future leaders and change-makers.
+                            </p>
                         </div>
 
                         <!-- Digital Education -->
-                        <div class="relative overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
-                            <!-- Background with border highlight -->
-                            <div class="absolute inset-0 bg-gradient-to-br from-blue-400/80 to-indigo-400/80 rounded-xl"></div>
-                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-300 to-blue-500"></div>
-
-                            <div class="relative p-8">
-                                <div class="flex items-start mb-6">
-                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-400 to-blue-600 flex items-center justify-center mr-5 shadow-lg">
-                                        <i class="fas fa-video text-white text-2xl"></i>
-                                    </div>
-                                    <h4 class="text-2xl font-bold text-white mt-2">Digital Education</h4>
+                        <div class="p-0">
+                            <div class="flex items-start mb-3">
+                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gray-200 flex items-center justify-center mr-4 shadow-sm">
+                                    <i class="fas fa-video text-gray-600 text-xl md:text-2xl"></i>
                                 </div>
-                                <p class="text-white leading-relaxed text-lg">
-                                    Through his various educational platforms, including YouTube channels with over 1K subscribers, he continues to inspire and educate thousands of students. His digital initiatives make quality education accessible to students across geographical boundaries.
-                                </p>
+                                <h4 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mt-1 md:mt-2">Digital Education</h4>
                             </div>
+                            <p class="text-gray-700 leading-relaxed text-base md:text-lg mb-4">
+                                Through his various educational platforms, including YouTube channels with over 1K subscribers, he continues to inspire and educate thousands of students. His digital initiatives make quality education accessible to students across geographical boundaries.
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Personal Information Section with Creative Layout -->
-                <div class="relative mt-20 mb-10">
-                    <!-- Diagonal background strip (opposite direction) -->
-                    <div class="absolute inset-0 bg-gradient-to-r from-indigo-900/80 to-blue-800/80 transform skew-y-3 shadow-xl"></div>
-
-                    <div class="relative z-10 py-16 px-6 md:px-10">
-                        <div class="max-w-6xl mx-auto">
-                            <div class="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
-                                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-r from-indigo-600 to-blue-500 flex-shrink-0 flex items-center justify-center shadow-lg transform hover:rotate-12 transition-transform duration-500">
-                                    <i class="fas fa-user-circle text-white text-4xl"></i>
+                <!-- Personal Information Section -->
+                <div class="mt-12 md:mt-16 mb-8 md:mb-10">
+                    <div class="py-8 md:py-12 px-4 md:px-6">
+                        <div class="max-w-4xl mx-auto">
+                            <div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 mb-8 md:mb-12">
+                                <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center shadow-sm">
+                                    <i class="fas fa-user-circle text-gray-600 text-3xl md:text-4xl"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-md">At a Glance</h3>
-                                    <div class="w-24 h-1.5 bg-white mb-6 rounded-full"></div>
+                                    <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-4">At a Glance</h3> <!-- Adjusted responsive font size -->
                                 </div>
                             </div>
 
-                            <!-- Personal Info Badges in Staggered Layout -->
-                            <div class="flex flex-wrap justify-center gap-4 md:gap-6">
-                                <div class="bg-white/15 backdrop-filter backdrop-blur-sm px-6 py-4 rounded-full border border-white/40 flex items-center shadow-lg hover:bg-white/25 transition-all duration-300 transform hover:scale-105">
-                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mr-3 shadow-md">
-                                        <i class="fas fa-map-marker-alt text-white"></i>
+                            <!-- Personal Info Badges -->
+                            <div class="flex flex-wrap justify-center gap-4"> <!-- Consistent gap -->
+                                <div class="bg-gray-100 px-5 py-3 rounded-lg border border-gray-200 flex items-center shadow-sm"> <!-- Increased padding -->
+                                    <div class="w-9 h-9 rounded-full bg-gray-300 flex items-center justify-center mr-3"> <!-- Adjusted size -->
+                                        <i class="fas fa-map-marker-alt text-gray-700 text-sm"></i> <!-- Adjusted size -->
                                     </div>
-                                    <span class="text-white font-medium">Bihar, India</span>
+                                    <span class="text-gray-700 font-medium text-base">Bihar, India</span> <!-- Standardized text size -->
                                 </div>
 
-                                <div class="bg-white/15 backdrop-filter backdrop-blur-sm px-6 py-4 rounded-full border border-white/40 flex items-center shadow-lg hover:bg-white/25 transition-all duration-300 transform hover:scale-105">
-                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mr-3 shadow-md">
-                                        <i class="fas fa-chalkboard-teacher text-white"></i>
+                                <div class="bg-gray-100 px-5 py-3 rounded-lg border border-gray-200 flex items-center shadow-sm">
+                                    <div class="w-9 h-9 rounded-full bg-gray-300 flex items-center justify-center mr-3">
+                                        <i class="fas fa-chalkboard-teacher text-gray-700 text-sm"></i>
                                     </div>
-                                    <span class="text-white font-medium">Teacher & Educator</span>
+                                    <span class="text-gray-700 font-medium text-base">Teacher & Educator</span>
                                 </div>
 
-                                <div class="bg-white/15 backdrop-filter backdrop-blur-sm px-6 py-4 rounded-full border border-white/40 flex items-center shadow-lg hover:bg-white/25 transition-all duration-300 transform hover:scale-105">
-                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mr-3 shadow-md">
-                                        <i class="fas fa-book text-white"></i>
+                                <div class="bg-gray-100 px-5 py-3 rounded-lg border border-gray-200 flex items-center shadow-sm">
+                                    <div class="w-9 h-9 rounded-full bg-gray-300 flex items-center justify-center mr-3">
+                                        <i class="fas fa-book text-gray-700 text-sm"></i>
                                     </div>
-                                    <span class="text-white font-medium">Published Author</span>
+                                    <span class="text-gray-700 font-medium text-base">Published Author</span>
                                 </div>
 
-                                <div class="bg-white/15 backdrop-filter backdrop-blur-sm px-6 py-4 rounded-full border border-white/40 flex items-center shadow-lg hover:bg-white/25 transition-all duration-300 transform hover:scale-105">
-                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mr-3 shadow-md">
-                                        <i class="fas fa-microphone text-white"></i>
+                                <div class="bg-gray-100 px-5 py-3 rounded-lg border border-gray-200 flex items-center shadow-sm">
+                                    <div class="w-9 h-9 rounded-full bg-gray-300 flex items-center justify-center mr-3">
+                                        <i class="fas fa-microphone text-gray-700 text-sm"></i>
                                     </div>
-                                    <span class="text-white font-medium">Speaker & Poet</span>
+                                    <span class="text-gray-700 font-medium text-base">Speaker & Poet</span>
                                 </div>
 
-                                <div class="bg-white/15 backdrop-filter backdrop-blur-sm px-6 py-4 rounded-full border border-white/40 flex items-center shadow-lg hover:bg-white/25 transition-all duration-300 transform hover:scale-105">
-                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mr-3 shadow-md">
-                                        <i class="fas fa-users text-white"></i>
+                                <div class="bg-gray-100 px-5 py-3 rounded-lg border border-gray-200 flex items-center shadow-sm">
+                                    <div class="w-9 h-9 rounded-full bg-gray-300 flex items-center justify-center mr-3">
+                                        <i class="fas fa-users text-gray-700 text-sm"></i>
                                     </div>
-                                    <span class="text-white font-medium">Youth Convenor</span>
+                                    <span class="text-gray-700 font-medium text-base">Youth Convenor</span>
                                 </div>
 
-                                <div class="bg-white/15 backdrop-filter backdrop-blur-sm px-6 py-4 rounded-full border border-white/40 flex items-center shadow-lg hover:bg-white/25 transition-all duration-300 transform hover:scale-105">
-                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mr-3 shadow-md">
-                                        <i class="fas fa-language text-white"></i>
+                                <div class="bg-gray-100 px-5 py-3 rounded-lg border border-gray-200 flex items-center shadow-sm">
+                                    <div class="w-9 h-9 rounded-full bg-gray-300 flex items-center justify-center mr-3">
+                                        <i class="fas fa-language text-gray-700 text-sm"></i>
                                     </div>
-                                    <span class="text-white font-medium">Hindi & English</span>
+                                    <span class="text-gray-700 font-medium text-base">Hindi & English</span>
                                 </div>
 
-                                <div class="bg-white/15 backdrop-filter backdrop-blur-sm px-6 py-4 rounded-full border border-white/40 flex items-center shadow-lg hover:bg-white/25 transition-all duration-300 transform hover:scale-105">
-                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mr-3 shadow-md">
-                                        <i class="fas fa-award text-white"></i>
+                                <div class="bg-gray-100 px-5 py-3 rounded-lg border border-gray-200 flex items-center shadow-sm">
+                                    <div class="w-9 h-9 rounded-full bg-gray-300 flex items-center justify-center mr-3">
+                                        <i class="fas fa-award text-gray-700 text-sm"></i>
                                     </div>
-                                    <span class="text-white font-medium">Award Recipient</span>
+                                    <span class="text-gray-700 font-medium text-base">Award Recipient</span>
                                 </div>
                             </div>
                         </div>
@@ -863,19 +555,13 @@
                 </div>
 
                 <!-- Call to Action Buttons -->
-                <div class="relative z-10 text-center mt-8 mb-4">
-                    <div class="inline-flex flex-wrap justify-center gap-6">
-                        <a href="#work" class="relative overflow-hidden group">
-                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300"></div>
-                            <div class="relative bg-white text-blue-700 px-8 py-4 rounded-full font-semibold shadow-lg group-hover:shadow-xl transition-all duration-300 border-2 border-blue-500">
-                                <i class="fas fa-briefcase mr-2"></i> View My Work
-                            </div>
+                <div class="text-center mt-8 md:mt-10 mb-6"> <!-- Adjusted margins -->
+                    <div class="inline-flex flex-wrap justify-center gap-4"> <!-- Consistent gap -->
+                        <a href="#work" class="bg-gray-800 text-white px-7 py-3 rounded-md font-semibold hover:bg-gray-700 transition-colors shadow-md text-base"> <!-- Unified button style -->
+                            <i class="fas fa-briefcase mr-2"></i> View My Work
                         </a>
-                        <a href="#contact" class="relative overflow-hidden group">
-                            <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-full opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300"></div>
-                            <div class="relative bg-transparent text-white px-8 py-4 rounded-full font-semibold shadow-lg group-hover:shadow-xl transition-all duration-300 border-2 border-white">
-                                <i class="fas fa-envelope mr-2"></i> Contact Me
-                            </div>
+                        <a href="#contact" class="border-2 border-gray-800 text-gray-800 px-7 py-3 rounded-md font-semibold hover:bg-gray-200 transition-colors shadow-md text-base"> <!-- Unified button style -->
+                            <i class="fas fa-envelope mr-2"></i> Contact Me
                         </a>
                     </div>
                 </div>
@@ -884,496 +570,260 @@
     </section>
 
     <!-- Work Section -->
-    <section id="work" class="py-20 relative overflow-hidden">
-        <!-- Main background gradient -->
-        <div class="absolute inset-0" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); opacity: 0.9;"></div>
-
-        <!-- Decorative elements -->
-        <div class="absolute top-0 left-0 w-full h-20 bg-white/5"></div>
-        <div class="absolute bottom-0 right-0 w-full h-20 bg-white/5"></div>
-        <div class="absolute top-40 right-10 w-40 h-40 rounded-full bg-blue-500/10 blur-3xl"></div>
-        <div class="absolute bottom-40 left-10 w-40 h-40 rounded-full bg-blue-300/10 blur-3xl"></div>
-
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-16">
-                <div class="inline-block mb-3 px-6 py-1 bg-white/30 backdrop-filter backdrop-blur-sm rounded-full border border-white/30">
-                    <span class="text-white font-medium">Creative Portfolio</span>
-                </div>
-                <h1 class="text-4xl font-extrabold text-white mb-4">My Work</h1>
-                <div class="w-24 h-1.5 bg-gradient-to-r from-white to-blue-400 mx-auto mb-6 rounded-full"></div>
-                <p class="text-white max-w-2xl mx-auto text-lg font-light">Exploring creativity through literature and education</p>
+    <section id="work" class="py-16 md:py-20"> <!-- Standardized padding -->
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-3">My Work</h2> <!-- Adjusted responsive font size -->
+                <p class="text-gray-600 max-w-2xl mx-auto text-base md:text-lg">Exploring creativity through literature and education</p> <!-- Standardized text size -->
             </div>
 
             <!-- Published Book -->
-            <div class="mb-16">
-                <h3 class="text-2xl font-bold mb-8 text-white text-center">Published Book</h3>
-                <div class="card bg-gradient-to-br from-amber-50 to-amber-100 p-8 rounded-xl shadow-lg border-0 hover:shadow-xl transition-all duration-300">
-                    <!-- Book display - larger and centered -->
-                    <div class="flex justify-center mb-10">
-                        <div class="relative">
-                            <!-- Book with enhanced 3D effect -->
-                            <div class="bg-white p-4 rounded-lg shadow-2xl transform rotate-3" style="box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);">
-                                <!-- Book container with larger dimensions -->
-                                <div class="h-[450px] w-80 overflow-hidden rounded-lg relative">
-                                    <!-- Main book cover image -->
-                                    <img src="Uski Hasrat Hai Book Cover.webp" alt="Uski Hasrat Hai Book Cover" class="w-full h-full object-contain">
-
-                                    <!-- Enhanced 3D book edge effects -->
-                                    <div class="absolute right-0 top-0 bottom-0 w-3 bg-gradient-to-l from-gray-300 to-transparent"></div>
-                                    <div class="absolute left-0 bottom-0 right-0 h-3 bg-gradient-to-t from-gray-300 to-transparent"></div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="mb-12 md:mb-16">
+                <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-gray-800 text-center">Published Book</h3> <!-- Adjusted responsive font size -->
+                <div class="md:flex md:items-start md:gap-8">
+                    <!-- Book Cover Image -->
+                    <div class="md:w-1/3 flex justify-center mb-6 md:mb-0">
+                        <img src="Uski Hasrat Hai Book Cover.webp" alt="Uski Hasrat Hai Book Cover" class="w-64 md:w-full max-w-xs h-auto object-contain rounded-md border border-gray-200 shadow-sm">
                     </div>
 
-                    <!-- Book details with sharper text -->
-                    <div class="text-center max-w-3xl mx-auto">
-                        <h4 class="text-3xl font-bold mb-3 text-white">Uski Hasrat Hai...</h4>
-                        <p class="text-white mb-5 font-medium text-xl">Published by Authors Tree Publishing, 2021</p>
-                        <p class="mb-6 text-white text-xl leading-relaxed">
+                    <!-- Book Details -->
+                    <div class="md:w-2/3 text-center md:text-left">
+                        <h4 class="text-lg sm:text-xl md:text-2xl font-bold mb-2 text-gray-800">Uski Hasrat Hai...</h4> <!-- Adjusted responsive font size -->
+                        <p class="text-gray-500 mb-3 text-sm sm:text-base md:text-lg">Published by Authors Tree Publishing, 2021</p> <!-- Adjusted responsive font size -->
+                        <p class="mb-4 text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed"> <!-- Standardized text size -->
                             "उसकी हसरत है..." is a poetic journey through life's various phases and emotions. The book captures the essence of human experiences, from childhood's innocence to adulthood's complexities. With lyrical prose and heartfelt verses, Prabhakar Kumar Machvey explores themes of love, ambition, nostalgia, and the human condition.
                         </p>
-                        <p class="mb-8 text-white text-xl leading-relaxed">
+                        <p class="mb-5 text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed"> <!-- Standardized text size -->
                             जीवन के वे दौर, जिनसे गुजरने वाले को शायद ही उस वक़्त इसकी अहमियत का अंदाज़ा होता हो...जब बचपन की अठखेलियाँ न तो समाप्त होती और न ही युवावस्था का आगाज़ होता है...वो दौर ज़िंदगी का सबसे हसीन दौर होता है...
                         </p>
-                        <div class="flex gap-4 flex-wrap justify-center">
-                            <a href="https://www.amazon.in/-/hi/Prabhakar-Kumar-Machvey-ebook/dp/B098DSCJVT" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded-full shadow-md transition-all duration-300 hover:translate-y-[-2px]">Amazon</a>
-                            <a href="https://www.flipkart.com/uski-hasrat-hai/p/itmb95fb94c8e1e6" target="_blank" class="bg-blue-500 hover:bg-blue-700 text-white px-6 py-2 rounded-full shadow-md transition-all duration-300 hover:translate-y-[-2px]">Flipkart</a>
-                            <a href="https://www.goodreads.com/book/show/58536038-uski-hasrat-hai" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full shadow-md transition-all duration-300 hover:translate-y-[-2px]">Goodreads</a>
-                            <a href="https://www.authorstree.com/books/96" target="_blank" class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2 rounded-full shadow-md transition-all duration-300 hover:translate-y-[-2px]">Authors Tree</a>
+                        <div class="flex gap-3 md:gap-4 flex-wrap justify-center md:justify-start">
+                            <a href="https://www.amazon.in/-/hi/Prabhakar-Kumar-Machvey-ebook/dp/B098DSCJVT" target="_blank" class="text-gray-700 hover:text-gray-900 underline transition-colors duration-300 text-sm md:text-base">Amazon</a>
+                            <a href="https://www.flipkart.com/uski-hasrat-hai/p/itmb95fb94c8e1e6" target="_blank" class="text-gray-700 hover:text-gray-900 underline transition-colors duration-300 text-sm md:text-base">Flipkart</a>
+                            <a href="https://www.goodreads.com/book/show/58536038-uski-hasrat-hai" target="_blank" class="text-gray-700 hover:text-gray-900 underline transition-colors duration-300 text-sm md:text-base">Goodreads</a>
+                            <a href="https://www.authorstree.com/books/96" target="_blank" class="text-gray-700 hover:text-gray-900 underline transition-colors duration-300 text-sm md:text-base">Authors Tree</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Educational Content - Consistent with Portfolio Style -->
+            <!-- Educational Content -->
             <div class="relative">
-                <!-- Decorative elements - consistent with My Work section -->
-                <div class="absolute top-10 right-10 w-40 h-40 rounded-full bg-blue-400/10 blur-3xl opacity-70"></div>
-                <div class="absolute bottom-10 left-10 w-40 h-40 rounded-full bg-teal-300/10 blur-3xl opacity-70"></div>
-
-                <!-- Section Header - Consistent with Portfolio Style -->
-                <div class="text-center mb-16 pt-4">
-                    <h3 class="text-3xl font-bold text-white mb-4">Educational Platforms</h3>
-                    <div class="w-24 h-1.5 bg-gradient-to-r from-white to-blue-400 mx-auto mb-6 rounded-full"></div>
-                    <p class="text-white max-w-2xl mx-auto text-lg font-light">Empowering students through innovative digital learning solutions</p>
+                <div class="text-center mb-12 md:mb-16 pt-4">
+                    <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-3">Educational Platforms</h3> <!-- Adjusted responsive font size -->
+                    <p class="text-gray-600 max-w-2xl mx-auto text-base md:text-lg">Empowering students through innovative digital learning solutions</p> <!-- Standardized text size -->
                 </div>
 
-                <!-- Interactive Educational Content Display -->
-                <div class="relative">
-                    <!-- YouTube Channel Section - Portfolio Style -->
-                    <div class="relative bg-white/30 backdrop-filter backdrop-blur-sm border border-white/40 rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:shadow-2xl mb-20">
-                        <div class="p-8 md:p-10">
-                            <div class="max-w-6xl mx-auto">
-                                <div class="flex flex-col md:flex-row items-center gap-8">
-                                    <!-- YouTube Icon - Portfolio Style -->
-                                    <div class="flex-shrink-0">
-                                        <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-red-600 flex items-center justify-center shadow-lg transform hover:scale-105 transition-transform duration-300">
-                                            <i class="fab fa-youtube text-white text-5xl"></i>
-                                        </div>
-                                    </div>
-
-                                    <!-- Content -->
-                                    <div class="md:flex-1">
-                                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
-                                            <div>
-                                                <h4 class="text-3xl font-bold text-white mb-2">Deep Classes Machvey</h4>
-                                                <div class="w-24 h-1 bg-white mb-3"></div>
-                                                <p class="text-white text-lg">Educational YouTube Channel with 1.17K+ subscribers</p>
-                                            </div>
-                                            <a href="https://www.youtube.com/channel/UCzo8ahKROYx3RA322XuEusg" target="_blank"
-                                               class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full shadow-md transition-all duration-300 hover:translate-y-[-2px] flex items-center mt-4 md:mt-0">
-                                                <span>Visit Channel</span>
-                                                <i class="fas fa-arrow-right ml-2"></i>
-                                            </a>
-                                        </div>
-
-                                        <p class="text-white leading-relaxed text-lg mb-6">
-                                            A comprehensive educational platform providing quality content for 10th, 12th, and competitive exam preparation. The channel features subject-specific guidance, exam strategies, and motivational content to help students achieve academic excellence.
-                                        </p>
-
-                                        <!-- Features - Portfolio Style -->
-                                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                            <div class="bg-white/30 p-4 rounded-lg flex items-center shadow-md hover:bg-white/20 transition-all duration-300">
-                                                <div class="w-10 h-10 bg-yellow-500 rounded-md flex items-center justify-center mr-3 shadow-sm">
-                                                    <i class="fas fa-video text-white"></i>
-                                                </div>
-                                                <span class="text-white font-medium">Video Lectures</span>
-                                            </div>
-                                            <div class="bg-white/30 p-4 rounded-lg flex items-center shadow-md hover:bg-white/20 transition-all duration-300">
-                                                <div class="w-10 h-10 bg-yellow-500 rounded-md flex items-center justify-center mr-3 shadow-sm">
-                                                    <i class="fas fa-book-open text-white"></i>
-                                                </div>
-                                                <span class="text-white font-medium">Study Materials</span>
-                                            </div>
-                                            <div class="bg-white/30 p-4 rounded-lg flex items-center shadow-md hover:bg-white/20 transition-all duration-300">
-                                                <div class="w-10 h-10 bg-yellow-500 rounded-md flex items-center justify-center mr-3 shadow-sm">
-                                                    <i class="fas fa-lightbulb text-white"></i>
-                                                </div>
-                                                <span class="text-white font-medium">Exam Strategies</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="space-y-10 md:space-y-12">
+                    <!-- YouTube Channel Section -->
+                    <div class="md:flex md:items-start md:gap-8 p-6 rounded-lg border border-gray-200 bg-white shadow-sm">
+                        <div class="flex-shrink-0 md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
+                            <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-red-500 flex items-center justify-center text-white text-3xl md:text-4xl">
+                                <i class="fab fa-youtube"></i>
+                            </div>
+                        </div>
+                        <div class="md:w-3/4 text-center md:text-left">
+                            <h4 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2">Deep Classes Machvey</h4> <!-- Adjusted responsive font size -->
+                            <p class="text-gray-600 text-sm sm:text-base md:text-lg mb-3">Educational YouTube Channel with 1.17K+ subscribers</p> <!-- Adjusted responsive font size -->
+                            <p class="text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg mb-4"> 
+                                A comprehensive educational platform providing quality content for 10th, 12th, and competitive exam preparation. The channel features subject-specific guidance, exam strategies, and motivational content to help students achieve academic excellence.
+                            </p>
+                            <a href="https://www.youtube.com/channel/UCzo8ahKROYx3RA322XuEusg" target="_blank"
+                               class="text-red-600 hover:text-red-700 underline font-medium transition-colors duration-300 text-xs sm:text-sm md:text-base"> <!-- Adjusted responsive font size -->
+                                Visit Channel <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                            <!-- Simplified Features -->
+                            <div class="mt-5 flex flex-wrap justify-center md:justify-start gap-2"> 
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full text-xs font-medium border border-gray-200">Video Lectures</span> 
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full text-xs font-medium border border-gray-200">Study Materials</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full text-xs font-medium border border-gray-200">Exam Strategies</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Mobile App Section - Portfolio Style -->
-                    <div class="relative bg-white/30 backdrop-filter backdrop-blur-sm border border-white/40 rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:shadow-2xl">
-                        <div class="p-8 md:p-10">
-                            <div class="max-w-6xl mx-auto">
-                                <div class="flex flex-col md:flex-row-reverse items-center gap-8">
-                                    <!-- App Icon - Portfolio Style -->
-                                    <div class="flex-shrink-0">
-                                        <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-teal-600 flex items-center justify-center shadow-lg transform hover:scale-105 transition-transform duration-300">
-                                            <i class="fas fa-mobile-alt text-white text-5xl"></i>
-                                        </div>
-                                    </div>
-
-                                    <!-- Content -->
-                                    <div class="md:flex-1">
-                                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
-                                            <div>
-                                                <h4 class="text-3xl font-bold text-white mb-2">Machvey App</h4>
-                                                <div class="w-24 h-1 bg-white mb-3"></div>
-                                                <p class="text-white text-lg">Educational mobile application</p>
-                                            </div>
-                                            <a href="https://play.google.com/store/apps/details?id=co.in.creatorsmind.marwtaj" target="_blank"
-                                               class="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-full shadow-md transition-all duration-300 hover:translate-y-[-2px] flex items-center mt-4 md:mt-0">
-                                                <span>Google Play</span>
-                                                <i class="fab fa-google-play ml-2"></i>
-                                            </a>
-                                        </div>
-
-                                        <p class="text-white leading-relaxed text-lg mb-6">
-                                            An educational app designed to help students prepare for Board exams with comprehensive study materials including free notes and videos. The app provides accessible learning resources for students on the go.
-                                        </p>
-
-                                        <!-- Features - Portfolio Style -->
-                                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                            <div class="bg-white/30 p-4 rounded-lg flex items-center shadow-md hover:bg-white/20 transition-all duration-300">
-                                                <div class="w-10 h-10 bg-emerald-500 rounded-md flex items-center justify-center mr-3 shadow-sm">
-                                                    <i class="fas fa-file-pdf text-white"></i>
-                                                </div>
-                                                <span class="text-white font-medium">Free Notes</span>
-                                            </div>
-                                            <div class="bg-white/30 p-4 rounded-lg flex items-center shadow-md hover:bg-white/20 transition-all duration-300">
-                                                <div class="w-10 h-10 bg-emerald-500 rounded-md flex items-center justify-center mr-3 shadow-sm">
-                                                    <i class="fas fa-question-circle text-white"></i>
-                                                </div>
-                                                <span class="text-white font-medium">Practice Questions</span>
-                                            </div>
-                                            <div class="bg-white/30 p-4 rounded-lg flex items-center shadow-md hover:bg-white/20 transition-all duration-300">
-                                                <div class="w-10 h-10 bg-emerald-500 rounded-md flex items-center justify-center mr-3 shadow-sm">
-                                                    <i class="fas fa-clock text-white"></i>
-                                                </div>
-                                                <span class="text-white font-medium">24/7 Accessibility</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <!-- Mobile App Section -->
+                    <div class="md:flex md:items-start md:gap-8 p-6 rounded-lg border border-gray-200 bg-white shadow-sm">
+                        <div class="flex-shrink-0 md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
+                             <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-teal-500 flex items-center justify-center text-white text-3xl md:text-4xl">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                        <div class="md:w-3/4 text-center md:text-left">
+                            <h4 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2">Machvey App</h4> <!-- Adjusted responsive font size -->
+                            <p class="text-gray-600 text-sm sm:text-base md:text-lg mb-3">Educational mobile application</p> <!-- Adjusted responsive font size -->
+                            <p class="text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg mb-4"> 
+                                An educational app designed to help students prepare for Board exams with comprehensive study materials including free notes and videos. The app provides accessible learning resources for students on the go.
+                            </p>
+                            <a href="https://play.google.com/store/apps/details?id=co.in.creatorsmind.marwtaj" target="_blank"
+                               class="text-teal-600 hover:text-teal-700 underline font-medium transition-colors duration-300 text-xs sm:text-sm md:text-base"> <!-- Adjusted responsive font size -->
+                                Google Play <i class="fab fa-google-play ml-1"></i>
+                            </a>
+                             <!-- Simplified Features -->
+                            <div class="mt-5 flex flex-wrap justify-center md:justify-start gap-2"> 
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full text-xs font-medium border border-gray-200">Free Notes</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full text-xs font-medium border border-gray-200">Practice Questions</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full text-xs font-medium border border-gray-200">24/7 Accessibility</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Statistics Section with Sharp Design -->
-                <div class="mt-20 relative">
-                    <div class="absolute inset-0 bg-gradient-to-r from-purple-800 to-indigo-800 clip-path-zigzag"></div>
-                    <div class="relative z-10 py-10 px-6">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                            <div class="text-center">
-                                <div class="text-4xl font-bold text-white mb-2">1.17K+</div>
-                                <div class="w-16 h-1 bg-amber-500 mx-auto mb-2"></div>
-                                <p class="text-white">YouTube Subscribers</p>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-4xl font-bold text-white mb-2">100+</div>
-                                <div class="w-16 h-1 bg-amber-500 mx-auto mb-2"></div>
-                                <p class="text-white">Educational Videos</p>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-4xl font-bold text-white mb-2">5K+</div>
-                                <div class="w-16 h-1 bg-amber-500 mx-auto mb-2"></div>
-                                <p class="text-white">App Downloads</p>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-4xl font-bold text-white mb-2">10K+</div>
-                                <div class="w-16 h-1 bg-amber-500 mx-auto mb-2"></div>
-                                <p class="text-white">Students Reached</p>
-                            </div>
+                <!-- Simplified Statistics Section -->
+                <div class="mt-12 md:mt-16 py-8 px-4 md:px-6 bg-gray-100 rounded-lg">
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6 text-center">
+                        <div>
+                            <p class="text-2xl md:text-3xl font-bold text-gray-700">1.17K+</p> <!-- Aligned color -->
+                            <p class="text-gray-500 text-sm md:text-base">YouTube Subscribers</p> <!-- Aligned color -->
+                        </div>
+                        <div>
+                            <p class="text-2xl md:text-3xl font-bold text-gray-700">100+</p>
+                            <p class="text-gray-500 text-sm md:text-base">Educational Videos</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl md:text-3xl font-bold text-gray-700">5K+</p>
+                            <p class="text-gray-500 text-sm md:text-base">App Downloads</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl md:text-3xl font-bold text-gray-700">10K+</p>
+                            <p class="text-gray-500 text-sm md:text-base">Students Reached</p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <style>
-                /* Sharp geometric clip paths */
-                .clip-path-polygon {
-                    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
-                }
-
-                .clip-path-polygon-right {
-                    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-                }
-
-                .clip-path-polygon-left {
-                    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
-                }
-
-                .clip-path-hexagon {
-                    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-                }
-
-                .clip-path-diamond {
-                    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-                }
-
-                .clip-path-star {
-                    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-                }
-
-                .clip-path-feature {
-                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 5% 50%);
-                }
-
-                .clip-path-button {
-                    clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
-                }
-
-                .clip-path-zigzag {
-                    clip-path: polygon(0 0, 100% 0, 100% 85%, 75% 85%, 75% 100%, 50% 85%, 25% 100%, 25% 85%, 0 85%);
-                }
-            </style>
+            <!-- Removed style block with clip-paths -->
         </div>
     </section>
-
-
 
     <!-- Achievements Section -->
-    <section id="achievements" class="py-20 relative overflow-hidden">
-        <!-- Main background gradient -->
-        <div class="absolute inset-0" style="background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%); opacity: 0.9;"></div>
-
-        <!-- Diagonal cut overlay -->
-        <div class="absolute -bottom-1/2 right-0 w-full h-full bg-white opacity-10" style="transform: skewY(12deg); transform-origin: bottom right;"></div>
-        <div class="absolute -top-1/2 left-0 w-full h-full bg-blue-900 opacity-20" style="transform: skewY(-8deg); transform-origin: top left;"></div>
-
-        <!-- Dark overlay for better text contrast -->
-        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
-
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="section-heading mx-auto text-white">Achievements</h2>
-                <p class="text-white/80 max-w-2xl mx-auto text-lg">Key accomplishments and milestones in my journey as an educator, author, and youth leader</p>
+    <section id="achievements" class="py-16 md:py-20 bg-f8f9fa"> <!-- Standardized padding -->
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-3">Achievements</h2> <!-- Adjusted responsive font size -->
+                <p class="text-gray-600 max-w-2xl mx-auto text-base md:text-lg">Key accomplishments and milestones in my journey as an educator, author, and youth leader</p> <!-- Standardized text size -->
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-md shadow-md hover:shadow-lg transition-all duration-300">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-secondary-color flex items-center justify-center rounded-md text-white mr-4">
-                            <i class="fas fa-microphone-alt text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800">National Youth Parliament</h3>
+            <div class="space-y-8 md:space-y-10">
+                <!-- Achievement Item 1 -->
+                <div class="md:flex md:items-start md:gap-6"> 
+                    <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 text-blue-600 mb-4 md:mb-0 md:mr-4">
+                        <i class="fas fa-microphone-alt text-xl"></i>
                     </div>
-
-                    <p class="text-gray-700 mb-4 leading-relaxed">
-                        Selected as a Bihar representative speaker for the National Youth Parliament Festival 2024, a prestigious platform for young voices across India.
-                    </p>
-                    <div class="p-4 bg-gray-50 rounded-md border-l-4 border-secondary-color">
-                        <p class="text-gray-700 italic">
-                            "Representing Bihar at the national level and sharing ideas with youth from across the country was a transformative experience."
+                    <div class="flex-grow">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">National Youth Parliament</h3> <!-- Adjusted responsive font size -->
+                        <p class="text-gray-700 leading-relaxed mb-3 text-sm sm:text-base"> <!-- Adjusted responsive font size -->
+                            Selected as a Bihar representative speaker for the National Youth Parliament Festival 2024, a prestigious platform for young voices across India.
                         </p>
+                        <div class="pl-3 border-l-4 border-gray-300">
+                            <p class="text-gray-600 italic text-xs sm:text-sm"> <!-- Adjusted responsive font size -->
+                                "Representing Bihar at the national level and sharing ideas with youth from across the country was a transformative experience."
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-md shadow-md hover:shadow-lg transition-all duration-300">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-tertiary-color flex items-center justify-center rounded-md text-white mr-4">
-                            <i class="fas fa-book text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800">Published Author</h3>
+                <!-- Achievement Item 2 -->
+                <div class="md:flex md:items-start md:gap-6"> 
+                    <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 text-indigo-600 mb-4 md:mb-0 md:mr-4">
+                        <i class="fas fa-book text-xl"></i>
                     </div>
-
-                    <p class="text-gray-700 mb-4 leading-relaxed">
-                        Published "उसकी हसरत है..." through Authors Tree Publishing, exploring the depths of human emotions through poetry and storytelling.
-                    </p>
-                    <div class="p-4 bg-gray-50 rounded-md border-l-4 border-tertiary-color">
-                        <p class="text-gray-700 italic">
-                            "Creating literature that resonates with readers has been one of the most fulfilling experiences of my career."
+                    <div class="flex-grow">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">Published Author</h3>
+                        <p class="text-gray-700 leading-relaxed mb-3 text-sm sm:text-base">
+                            Published "उसकी हसरत है..." through Authors Tree Publishing, exploring the depths of human emotions through poetry and storytelling.
                         </p>
+                        <div class="pl-3 border-l-4 border-gray-300">
+                            <p class="text-gray-600 italic text-xs sm:text-sm">
+                                "Creating literature that resonates with readers has been one of the most fulfilling experiences of my career."
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-md shadow-md hover:shadow-lg transition-all duration-300">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-primary-color flex items-center justify-center rounded-md text-white mr-4">
-                            <i class="fas fa-users text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800">Bihar Chhatra Sansad</h3>
+                <!-- Achievement Item 3 -->
+                <div class="md:flex md:items-start md:gap-6"> 
+                     <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 text-purple-600 mb-4 md:mb-0 md:mr-4">
+                        <i class="fas fa-users text-xl"></i>
                     </div>
-
-                    <p class="text-gray-700 mb-4 leading-relaxed">
-                        Appointed as the Youth Convenor for Bihar Chhatra Sansad, leading initiatives to bring together motivated students for meaningful social and political discourse.
-                    </p>
-                    <div class="p-4 bg-gray-50 rounded-md border-l-4 border-primary-color">
-                        <p class="text-gray-700 italic">
-                            "Building a platform where youth can freely express their ideas and collaborate for positive change has been immensely rewarding."
+                    <div class="flex-grow">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">Bihar Chhatra Sansad</h3>
+                        <p class="text-gray-700 leading-relaxed mb-3 text-sm sm:text-base">
+                            Appointed as the Youth Convenor for Bihar Chhatra Sansad, leading initiatives to bring together motivated students for meaningful social and political discourse.
                         </p>
+                        <div class="pl-3 border-l-4 border-gray-300">
+                            <p class="text-gray-600 italic text-xs sm:text-sm">
+                                "Building a platform where youth can freely express their ideas and collaborate for positive change has been immensely rewarding."
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-md shadow-md hover:shadow-lg transition-all duration-300">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-accent-color flex items-center justify-center rounded-md text-white mr-4">
-                            <i class="fas fa-chalkboard-teacher text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800">Educational Leadership</h3>
+                <!-- Achievement Item 4 -->
+                <div class="md:flex md:items-start md:gap-6"> 
+                    <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 text-teal-600 mb-4 md:mb-0 md:mr-4">
+                        <i class="fas fa-chalkboard-teacher text-xl"></i>
                     </div>
-
-                    <p class="text-gray-700 mb-4 leading-relaxed">
-                        Founded Deep Classes Machvey, an educational initiative helping students prepare for board exams and competitive examinations with innovative teaching methods.
-                    </p>
-                    <div class="p-4 bg-gray-50 rounded-md border-l-4 border-accent-color">
-                        <p class="text-gray-700 italic">
-                            "Seeing students achieve their academic goals and grow into confident individuals has been the greatest reward of my teaching career."
+                    <div class="flex-grow">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">Educational Leadership</h3>
+                        <p class="text-gray-700 leading-relaxed mb-3 text-sm sm:text-base">
+                            Founded Deep Classes Machvey, an educational initiative helping students prepare for board exams and competitive examinations with innovative teaching methods.
                         </p>
+                        <div class="pl-3 border-l-4 border-gray-300">
+                            <p class="text-gray-600 italic text-xs sm:text-sm">
+                                "Seeing students achieve their academic goals and grow into confident individuals has been the greatest reward of my teaching career."
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-    <!-- Testimonials Section - Portfolio Style -->
-    <section id="testimonials" class="py-24 relative overflow-hidden">
-        <!-- Artistic background with portfolio feel -->
-        <div class="absolute inset-0" style="background: linear-gradient(135deg, var(--tertiary-color) 0%, var(--quaternary-color) 100%); opacity: 0.9;"></div>
-        
-        <!-- Creative geometric elements that feel more artistic than corporate -->
-        <div class="absolute top-20 right-10 w-60 h-60 bg-indigo-500/10 transform rotate-12"></div>
-        <div class="absolute bottom-20 left-10 w-60 h-60 bg-blue-500/10 transform -rotate-6"></div>
-        
-        <!-- Portfolio-style header with frame design - consistent with other sections -->
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="mb-16 relative">
-                <div class="inline-block bg-white p-1 shadow-xl transform -rotate-1 mx-auto">
-                    <div class="bg-indigo-900 p-6 transform rotate-1">
-                        <h2 class="text-3xl md:text-4xl font-bold text-white">What People Say</h2>
-                        <div class="w-24 h-1 bg-white/70 mt-3"></div>
-                    </div>
-                </div>
-                <p class="text-white/80 max-w-2xl mx-auto text-center mt-8 text-lg">Feedback from students, colleagues, and community members</p>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 md:py-20 bg-f8f9fa"> 
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-3">What People Say</h2> <!-- Adjusted responsive font size -->
+                <p class="text-gray-600 max-w-2xl mx-auto text-base md:text-lg">Feedback from students, colleagues, and community members</p> <!-- Standardized text size -->
             </div>
             
-            <!-- Testimonials with artistic portfolio-style design -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="space-y-8 md:space-y-10">
                 <!-- Testimonial 1 -->
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-indigo-600/30 rounded-lg transform group-hover:scale-[1.02] transition-all duration-300"></div>
-                    <div class="relative bg-white/30 backdrop-filter backdrop-blur-sm p-8 rounded-lg shadow-xl border border-white/40 overflow-hidden">
-                        <!-- Decorative elements -->
-                        <div class="absolute top-0 right-0 w-20 h-20 bg-blue-500/10 transform rotate-45 translate-x-10 -translate-y-10"></div>
-                        
-                        <!-- Quote icon with artistic style -->
-                        <div class="relative mb-6">
-                            <div class="w-12 h-12 bg-blue-600/80 rounded-full flex items-center justify-center shadow-lg transform -rotate-6">
-                                <i class="fas fa-quote-left text-xl text-white"></i>
-                            </div>
-                        </div>
-                        
-                        <!-- Testimonial content -->
-                        <p class="mb-8 text-white/90 leading-relaxed italic">
-                            "Prabhakar sir's guidance helped me score over 90% in my board exams. His teaching style makes complex topics easy to understand and his strategies for exam preparation are truly effective!"
-                        </p>
-                        
-                        <!-- Author with artistic frame - similar to profile image in Home section -->
-                        <div class="flex items-center">
-                            <div class="relative">
-                                <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-md blur-[1px]"></div>
-                                <div class="relative w-12 h-12 bg-blue-600 flex items-center justify-center rounded-md text-white font-bold border border-white/30 shadow-lg">
-                                    PS
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="font-semibold text-white">Priya Sharma</h4>
-                                <div class="w-12 h-0.5 bg-blue-400 my-1"></div>
-                                <p class="text-blue-200 text-sm">12th Grade Student</p>
-                            </div>
+                <div> 
+                    <i class="fas fa-quote-left text-gray-400 text-2xl mb-3"></i> 
+                    <p class="mb-4 text-gray-700 leading-relaxed italic text-sm sm:text-base md:text-lg"> <!-- Adjusted responsive font size -->
+                        "Prabhakar sir's guidance helped me score over 90% in my board exams. His teaching style makes complex topics easy to understand and his strategies for exam preparation are truly effective!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="ml-0">
+                            <h4 class="text-sm sm:text-md font-semibold text-gray-800">Priya Sharma</h4> <!-- Adjusted responsive font size -->
+                            <p class="text-gray-500 text-xs">12th Grade Student</p> 
                         </div>
                     </div>
                 </div>
                 
                 <!-- Testimonial 2 -->
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-gradient-to-r from-indigo-600/30 to-purple-600/30 rounded-lg transform group-hover:scale-[1.02] transition-all duration-300"></div>
-                    <div class="relative bg-white/30 backdrop-filter backdrop-blur-sm p-8 rounded-lg shadow-xl border border-white/40 overflow-hidden">
-                        <!-- Decorative elements -->
-                        <div class="absolute top-0 right-0 w-20 h-20 bg-indigo-500/10 transform rotate-45 translate-x-10 -translate-y-10"></div>
-                        
-                        <!-- Quote icon with artistic style -->
-                        <div class="relative mb-6">
-                            <div class="w-12 h-12 bg-indigo-600/80 rounded-full flex items-center justify-center shadow-lg transform -rotate-6">
-                                <i class="fas fa-quote-left text-xl text-white"></i>
-                            </div>
-                        </div>
-                        
-                        <!-- Testimonial content -->
-                        <p class="mb-8 text-white/90 leading-relaxed italic">
-                            "उसकी हसरत है' is a beautiful piece of literature. Machvey's writing style touches the heart and makes you reflect on life's precious moments. The way he captures emotions through his words is truly remarkable."
-                        </p>
-                        
-                        <!-- Author with artistic frame - similar to profile image in Home section -->
-                        <div class="flex items-center">
-                            <div class="relative">
-                                <div class="absolute inset-0 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-md blur-[1px]"></div>
-                                <div class="relative w-12 h-12 bg-indigo-600 flex items-center justify-center rounded-md text-white font-bold border border-white/30 shadow-lg">
-                                    RK
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="font-semibold text-white">Rajesh Kumar</h4>
-                                <div class="w-12 h-0.5 bg-indigo-400 my-1"></div>
-                                <p class="text-blue-200 text-sm">Literature Enthusiast</p>
-                            </div>
+                <div> 
+                    <i class="fas fa-quote-left text-gray-400 text-2xl mb-3"></i> 
+                    <p class="mb-4 text-gray-700 leading-relaxed italic text-sm sm:text-base md:text-lg"> 
+                        "उसकी हसरत है' is a beautiful piece of literature. Machvey's writing style touches the heart and makes you reflect on life's precious moments. The way he captures emotions through his words is truly remarkable."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="ml-0">
+                            <h4 class="text-sm sm:text-md font-semibold text-gray-800">Rajesh Kumar</h4> 
+                            <p class="text-gray-500 text-xs">Literature Enthusiast</p> 
                         </div>
                     </div>
                 </div>
                 
                 <!-- Testimonial 3 -->
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-sky-600/30 rounded-lg transform group-hover:scale-[1.02] transition-all duration-300"></div>
-                    <div class="relative bg-white/30 backdrop-filter backdrop-blur-sm p-8 rounded-lg shadow-xl border border-white/40 overflow-hidden">
-                        <!-- Decorative elements -->
-                        <div class="absolute top-0 right-0 w-20 h-20 bg-sky-500/10 transform rotate-45 translate-x-10 -translate-y-10"></div>
-                        
-                        <!-- Quote icon with artistic style -->
-                        <div class="relative mb-6">
-                            <div class="w-12 h-12 bg-sky-600/80 rounded-full flex items-center justify-center shadow-lg transform -rotate-6">
-                                <i class="fas fa-quote-left text-xl text-white"></i>
-                            </div>
-                        </div>
-                        
-                        <!-- Testimonial content -->
-                        <p class="mb-8 text-white/90 leading-relaxed italic">
-                            "Bihar Chhatra Sansad has been a transformative platform for youth like me. Under Prabhakar's leadership, we've been able to discuss important issues and connect with like-minded individuals who are passionate about creating positive change."
-                        </p>
-                        
-                        <!-- Author with artistic frame - similar to profile image in Home section -->
-                        <div class="flex items-center">
-                            <div class="relative">
-                                <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-sky-500 rounded-md blur-[1px]"></div>
-                                <div class="relative w-12 h-12 bg-sky-600 flex items-center justify-center rounded-md text-white font-bold border border-white/30 shadow-lg">
-                                    AK
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="font-semibold text-white">Amit Kumar</h4>
-                                <div class="w-12 h-0.5 bg-sky-400 my-1"></div>
-                                <p class="text-blue-200 text-sm">BCS Participant</p>
-                            </div>
+                <div> 
+                    <i class="fas fa-quote-left text-gray-400 text-2xl mb-3"></i> 
+                    <p class="mb-4 text-gray-700 leading-relaxed italic text-sm sm:text-base md:text-lg"> 
+                        "Bihar Chhatra Sansad has been a transformative platform for youth like me. Under Prabhakar's leadership, we've been able to discuss important issues and connect with like-minded individuals who are passionate about creating positive change."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="ml-0">
+                            <h4 class="text-sm sm:text-md font-semibold text-gray-800">Amit Kumar</h4> 
+                            <p class="text-gray-500 text-xs">BCS Participant</p> 
                         </div>
                     </div>
                 </div>
@@ -1382,140 +832,105 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 relative overflow-hidden">
-        <!-- Main background gradient -->
-        <div class="absolute inset-0" style="background: linear-gradient(135deg, #0f172a 0%, #3b82f6 100%);"></div>
-
-        <!-- Diagonal cut overlay -->
-        <div class="absolute -bottom-1/2 right-0 w-full h-full bg-white opacity-10" style="transform: skewY(12deg); transform-origin: bottom right;"></div>
-        <div class="absolute -top-1/2 left-0 w-full h-full bg-blue-900 opacity-20" style="transform: skewY(-8deg); transform-origin: top left;"></div>
-
-        <!-- Dark overlay for better text contrast -->
-        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
-
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-16">
-                <span class="inline-block px-4 py-1 bg-white/30 rounded-full text-white text-sm font-medium mb-3">
-                    Connect With Me
-                </span>
-                <h2 class="section-heading mx-auto text-white">Get In Touch</h2>
-                <p class="text-white/80 max-w-2xl mx-auto text-lg">Have a question or want to collaborate? Feel free to reach out!</p>
+    <section id="contact" class="py-16 md:py-20"> 
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-3">Get In Touch</h2> <!-- Adjusted responsive font size -->
+                <p class="text-gray-600 max-w-2xl mx-auto text-base md:text-lg mt-4">Have a question or want to collaborate? Feel free to reach out!</p> <!-- Standardized text size -->
             </div>
 
-            <div class="flex flex-col md:flex-row gap-10">
+            <div class="flex flex-col md:flex-row gap-8 md:gap-10">
                 <div class="md:w-1/2">
-                    <div class="bg-white/30 backdrop-filter backdrop-blur-sm p-8 rounded-xl shadow-lg border border-white/40 relative overflow-hidden hover:shadow-xl">
-                        <!-- Card background effect -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-blue-900/5 opacity-30"></div>
+                    <div class="bg-white p-6 md:p-8 rounded-lg shadow-md border border-gray-200">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-6">Contact Information</h4> <!-- Changed to h4, adjusted mb -->
 
-                        <h3 class="text-xl font-bold mb-8 relative z-10 text-white">Contact Information</h3>
-
-                        <div class="space-y-6 relative z-10">
+                        <div class="space-y-6"> 
                             <div class="flex items-start group">
-                                <div class="relative mr-5">
-                                    <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full blur-sm opacity-40 group-hover:opacity-70 transition-opacity"></div>
-                                    <div class="relative w-14 h-14 rounded-full flex items-center justify-center bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm border border-white/30">
-                                        <i class="fas fa-phone text-white text-xl"></i>
-                                    </div>
+                                <div class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full mr-4"> 
+                                    <i class="fas fa-phone text-gray-600 text-lg"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-lg text-white group-hover:text-blue-300 transition-colors duration-300">Phone</h4>
-                                    <p class="text-white/80">Contact for Machvey Guidance: 8507289381</p>
+                                    <h5 class="font-semibold text-sm sm:text-md text-gray-800">Phone</h5> <!-- Adjusted responsive font size -->
+                                    <p class="text-gray-600 text-sm sm:text-base">Contact for Machvey Guidance: 8507289381</p> <!-- Adjusted responsive font size -->
                                 </div>
                             </div>
                             <div class="flex items-start group">
-                                <div class="relative mr-5">
-                                    <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-400 rounded-full blur-sm opacity-40 group-hover:opacity-70 transition-opacity"></div>
-                                    <div class="relative w-14 h-14 rounded-full flex items-center justify-center bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm border border-white/30">
-                                        <i class="fas fa-envelope text-white text-xl"></i>
-                                    </div>
+                                <div class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-gray-600 text-lg"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-lg text-white group-hover:text-blue-300 transition-colors duration-300">Email</h4>
-                                    <p class="text-white/80">info.machveyguidance@gmail.com</p>
+                                    <h5 class="font-semibold text-sm sm:text-md text-gray-800">Email</h5>
+                                    <p class="text-gray-600 text-sm sm:text-base">info.machveyguidance@gmail.com</p>
                                 </div>
                             </div>
                             <div class="flex items-start group">
-                                <div class="relative mr-5">
-                                    <div class="absolute inset-0 bg-gradient-to-br from-blue-700 to-blue-500 rounded-full blur-sm opacity-40 group-hover:opacity-70 transition-opacity"></div>
-                                    <div class="relative w-14 h-14 rounded-full flex items-center justify-center bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm border border-white/30">
-                                        <i class="fas fa-map-marker-alt text-white text-xl"></i>
-                                    </div>
+                                <div class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-gray-600 text-lg"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-lg text-white group-hover:text-blue-300 transition-colors duration-300">Location</h4>
-                                    <p class="text-white/80">Bihar, India</p>
+                                    <h5 class="font-semibold text-sm sm:text-md text-gray-800">Location</h5>
+                                    <p class="text-gray-600 text-sm sm:text-base">Bihar, India</p>
                                 </div>
                             </div>
                         </div>
 
-                        <h3 class="text-xl font-bold mt-12 mb-8 relative z-10 text-white">Social Media</h3>
-                        <div class="flex flex-wrap gap-5">
-                            <a href="https://www.instagram.com/prabhakarkumarmachvey/" target="_blank" class="group relative">
-                                <span class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-blue-400 opacity-0 group-hover:opacity-70 blur-md transition-all duration-300"></span>
-                                <span class="relative flex items-center justify-center w-14 h-14 rounded-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-10 border border-white border-opacity-20 text-white group-hover:transform group-hover:scale-110 transition-all duration-300">
-                                    <i class="fab fa-instagram text-xl"></i>
+                        <h4 class="text-lg sm:text-xl font-semibold text-gray-800 mt-10 mb-5">Social Media</h4> <!-- Adjusted responsive font size -->
+                        <div class="flex flex-wrap gap-3"> <!-- Unified social icon spacing -->
+                            <a href="https://www.instagram.com/prabhakarkumarmachvey/" target="_blank" class="group">
+                                <span class="flex items-center justify-center w-11 h-11 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors duration-300">
+                                    <i class="fab fa-instagram text-lg"></i>
                                 </span>
                             </a>
-                            <a href="https://www.facebook.com/prabhakarkumarmachvey/" target="_blank" class="group relative">
-                                <span class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-blue-700 opacity-0 group-hover:opacity-70 blur-md transition-all duration-300"></span>
-                                <span class="relative flex items-center justify-center w-14 h-14 rounded-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-10 border border-white border-opacity-20 text-white group-hover:transform group-hover:scale-110 transition-all duration-300">
-                                    <i class="fab fa-facebook-f text-xl"></i>
+                            <a href="https://www.facebook.com/prabhakarkumarmachvey/" target="_blank" class="group">
+                                <span class="flex items-center justify-center w-11 h-11 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors duration-300">
+                                    <i class="fab fa-facebook-f text-lg"></i>
                                 </span>
                             </a>
-                            <a href="https://www.youtube.com/channel/UChRTKCXtT1nbfsXArw2Xxzg" target="_blank" class="group relative">
-                                <span class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-700 to-blue-500 opacity-0 group-hover:opacity-70 blur-md transition-all duration-300"></span>
-                                <span class="relative flex items-center justify-center w-14 h-14 rounded-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-10 border border-white border-opacity-20 text-white group-hover:transform group-hover:scale-110 transition-all duration-300">
-                                    <i class="fab fa-youtube text-xl"></i>
+                            <a href="https://www.youtube.com/channel/UChRTKCXtT1nbfsXArw2Xxzg" target="_blank" class="group">
+                                <span class="flex items-center justify-center w-11 h-11 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors duration-300">
+                                    <i class="fab fa-youtube text-lg"></i>
                                 </span>
                             </a>
-                            <a href="https://www.threads.com/@prabhakarkumarmachvey" target="_blank" class="group relative">
-                                <span class="absolute inset-0 rounded-full bg-gradient-to-r from-quaternary-color to-primary-color opacity-0 group-hover:opacity-70 blur-md transition-all duration-300"></span>
-                                <span class="relative flex items-center justify-center w-14 h-14 rounded-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-10 border border-white border-opacity-20 text-white group-hover:transform group-hover:scale-110 transition-all duration-300">
-                                    <i class="fab fa-threads text-xl"></i>
+                            <a href="https://www.threads.com/@prabhakarkumarmachvey" target="_blank" class="group">
+                                <span class="flex items-center justify-center w-11 h-11 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors duration-300">
+                                    <i class="fab fa-threads text-lg"></i>
                                 </span>
                             </a>
-                            <a href="https://www.linkedin.com/in/prabhakar-kumar-machvey-911690335" target="_blank" class="group relative">
-                                <span class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-blue-800 opacity-0 group-hover:opacity-70 blur-md transition-all duration-300"></span>
-                                <span class="relative flex items-center justify-center w-14 h-14 rounded-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-10 border border-white border-opacity-20 text-white group-hover:transform group-hover:scale-110 transition-all duration-300">
-                                    <i class="fab fa-linkedin-in text-xl"></i>
+                            <a href="https://www.linkedin.com/in/prabhakar-kumar-machvey-911690335" target="_blank" class="group">
+                                <span class="flex items-center justify-center w-11 h-11 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors duration-300">
+                                    <i class="fab fa-linkedin-in text-lg"></i>
                                 </span>
                             </a>
-                            <a href="https://www.youtube.com/channel/UCzo8ahKROYx3RA322XuEusg" target="_blank" class="group relative">
-                                <span class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-70 blur-md transition-all duration-300"></span>
-                                <span class="relative flex items-center justify-center w-14 h-14 rounded-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-10 border border-white border-opacity-20 text-white group-hover:transform group-hover:scale-110 transition-all duration-300">
-                                    <i class="fas fa-graduation-cap text-xl"></i>
+                            <a href="https://www.youtube.com/channel/UCzo8ahKROYx3RA322XuEusg" target="_blank" class="group">
+                                <span class="flex items-center justify-center w-11 h-11 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors duration-300">
+                                    <i class="fas fa-graduation-cap text-lg"></i>
                                 </span>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="md:w-1/2">
-                    <div class="bg-white/30 backdrop-filter backdrop-blur-sm p-8 rounded-xl shadow-lg border border-white/40 relative overflow-hidden hover:shadow-xl">
-                        <!-- Card background effect -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-blue-900/5 opacity-30"></div>
+                    <div class="bg-white p-6 md:p-8 rounded-lg shadow-md border border-gray-200">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-6">Connect With Me</h4> <!-- Changed to h4 -->
 
-                        <h3 class="text-xl font-bold mb-8 relative z-10 text-white">Connect With Me</h3>
-
-                        <form class="relative z-10">
-                            <div class="mb-6">
-                                <label for="name" class="block text-white mb-2 font-medium">Name</label>
-                                <input type="text" id="name" class="w-full px-5 py-3 bg-white/20 backdrop-filter backdrop-blur-sm border border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-300 text-white placeholder-white/50" placeholder="Your Name">
+                        <form>
+                            <div class="mb-5">
+                                <label for="name" class="block text-gray-700 mb-1.5 font-medium text-sm">Name</label> <!-- Adjusted label size -->
+                                <input type="text" id="name" class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-300 text-gray-800 placeholder-gray-400 text-base" placeholder="Your Name"> <!-- Adjusted padding, border, bg, text size -->
+                            </div>
+                            <div class="mb-5">
+                                <label for="email" class="block text-gray-700 mb-1.5 font-medium text-sm">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-300 text-gray-800 placeholder-gray-400 text-base" placeholder="Your Email">
+                            </div>
+                            <div class="mb-5">
+                                <label for="subject" class="block text-gray-700 mb-1.5 font-medium text-sm">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-300 text-gray-800 placeholder-gray-400 text-base" placeholder="Subject">
                             </div>
                             <div class="mb-6">
-                                <label for="email" class="block text-white mb-2 font-medium">Email</label>
-                                <input type="email" id="email" class="w-full px-5 py-3 bg-white/20 backdrop-filter backdrop-blur-sm border border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-300 text-white placeholder-white/50" placeholder="Your Email">
+                                <label for="message" class="block text-gray-700 mb-1.5 font-medium text-sm">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-300 text-gray-800 placeholder-gray-400 text-base" placeholder="Your Message"></textarea>
                             </div>
-                            <div class="mb-6">
-                                <label for="subject" class="block text-white mb-2 font-medium">Subject</label>
-                                <input type="text" id="subject" class="w-full px-5 py-3 bg-white/20 backdrop-filter backdrop-blur-sm border border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-300 text-white placeholder-white/50" placeholder="Subject">
-                            </div>
-                            <div class="mb-8">
-                                <label for="message" class="block text-white mb-2 font-medium">Message</label>
-                                <textarea id="message" rows="5" class="w-full px-5 py-3 bg-white/20 backdrop-filter backdrop-blur-sm border border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-300 text-white placeholder-white/50" placeholder="Your Message"></textarea>
-                            </div>
-                            <button type="button" class="relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-800 text-white font-medium py-3 px-8 rounded-full shadow-lg transform hover:-translate-y-1 transition-all hover:shadow-xl border border-white/40 group">
-                                <span class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
+                            <button type="button" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-7 rounded-md shadow-sm transition-colors duration-300 text-base"> <!-- Unified button style -->
                                 Send Message
                                 <i class="fas fa-paper-plane ml-2"></i>
                             </button>
@@ -1524,36 +939,36 @@
                 </div>
             </div>
 
-            <div class="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
-                <div class="bg-white/30 backdrop-filter backdrop-blur-sm p-6 rounded-md shadow-lg border border-white/40">
+            <div class="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 justify-center">
+                <div class="bg-white p-5 rounded-lg shadow-md border border-gray-200">
                     <div class="flex flex-col items-center justify-center">
-                        <i class="fab fa-youtube text-3xl mb-4 text-white"></i>
-                        <div class="text-4xl font-bold text-white mb-2">1.17K+</div>
-                        <p class="text-white/80 font-medium">YouTube Subscribers</p>
+                        <i class="fab fa-youtube text-3xl mb-3 text-red-500"></i>
+                        <div class="text-2xl md:text-3xl font-bold text-gray-700 mb-1">1.17K+</div> <!-- Aligned color -->
+                        <p class="text-gray-500 font-medium text-sm md:text-base">YouTube Subscribers</p> <!-- Aligned color -->
                     </div>
                 </div>
 
-                <div class="bg-white/30 backdrop-filter backdrop-blur-sm p-6 rounded-md shadow-lg border border-white/40">
+                <div class="bg-white p-5 rounded-lg shadow-md border border-gray-200">
                     <div class="flex flex-col items-center justify-center">
-                        <i class="fab fa-instagram text-3xl mb-4 text-white"></i>
-                        <div class="text-4xl font-bold text-white mb-2">15K+</div>
-                        <p class="text-white/80 font-medium">Instagram Followers</p>
+                        <i class="fab fa-instagram text-3xl mb-3 text-pink-500"></i>
+                        <div class="text-2xl md:text-3xl font-bold text-gray-700 mb-1">15K+</div>
+                        <p class="text-gray-500 font-medium text-sm md:text-base">Instagram Followers</p>
                     </div>
                 </div>
 
-                <div class="bg-white/30 backdrop-filter backdrop-blur-sm p-6 rounded-md shadow-lg border border-white/40">
+                <div class="bg-white p-5 rounded-lg shadow-md border border-gray-200">
                     <div class="flex flex-col items-center justify-center">
-                        <i class="fab fa-facebook text-3xl mb-4 text-white"></i>
-                        <div class="text-4xl font-bold text-white mb-2">2.1K+</div>
-                        <p class="text-white/80 font-medium">Facebook Followers</p>
+                        <i class="fab fa-facebook text-3xl mb-3 text-blue-600"></i>
+                        <div class="text-2xl md:text-3xl font-bold text-gray-700 mb-1">2.1K+</div>
+                        <p class="text-gray-500 font-medium text-sm md:text-base">Facebook Followers</p>
                     </div>
                 </div>
 
-                <div class="bg-white/30 backdrop-filter backdrop-blur-sm p-6 rounded-md shadow-lg border border-white/40">
+                <div class="bg-white p-5 rounded-lg shadow-md border border-gray-200">
                     <div class="flex flex-col items-center justify-center">
-                        <i class="fas fa-video text-3xl mb-4 text-white"></i>
-                        <div class="text-4xl font-bold text-white mb-2">118+</div>
-                        <p class="text-white/80 font-medium">Educational Videos</p>
+                        <i class="fas fa-video text-3xl mb-3 text-gray-500"></i>
+                        <div class="text-2xl md:text-3xl font-bold text-gray-700 mb-1">118+</div>
+                        <p class="text-gray-500 font-medium text-sm md:text-base">Educational Videos</p>
                     </div>
                 </div>
             </div>
@@ -1561,68 +976,50 @@
     </section>
 
     <!-- Footer -->
-    <footer class="relative py-20 overflow-hidden">
-        <!-- Background gradient -->
-        <div class="absolute inset-0" style="background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%); opacity: 0.9;"></div>
-
-        <!-- Decorative elements -->
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800"></div>
-        <div class="absolute -top-1/2 left-0 w-full h-full bg-blue-900 opacity-20" style="transform: skewY(-8deg); transform-origin: top left;"></div>
-        <div class="absolute -bottom-1/2 right-0 w-full h-full bg-white opacity-10" style="transform: skewY(12deg); transform-origin: bottom right;"></div>
-
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="bg-white/30 backdrop-filter backdrop-blur-sm p-10 rounded-2xl shadow-lg border border-white/40 relative overflow-hidden mb-10">
+    <footer class="py-16 md:py-20 bg-gray-100 border-t border-gray-200"> <!-- Standardized padding -->
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-md border border-gray-200 mb-8 md:mb-10">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <div class="mb-8 md:mb-0 text-center md:text-left">
-                        <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white/90 to-white/70 mb-2">Prabhakar Kumar Machvey</h2>
-                        <div class="inline-block px-6 py-2 rounded-full bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm border border-white/10">
-                            <p class="text-white/80">Author | Speaker | Educator | Youth Leader</p>
+                    <div class="mb-6 md:mb-0 text-center md:text-left">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-1.5">Prabhakar Kumar Machvey</h3> <!-- Changed to h3 for semantics -->
+                        <div class="inline-block px-4 py-1.5 rounded-full bg-gray-200">
+                            <p class="text-gray-700 text-sm md:text-base">Author | Speaker | Educator | Youth Leader</p>
                         </div>
                     </div>
-                    <div class="flex flex-wrap justify-center gap-5">
-                        <a href="https://www.instagram.com/prabhakarkumarmachvey/" target="_blank" class="group relative">
-                            <span class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-blue-400 opacity-0 group-hover:opacity-70 blur-md transition-all duration-300"></span>
-                            <span class="relative flex items-center justify-center w-12 h-12 rounded-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-10 border border-white border-opacity-20 text-white group-hover:transform group-hover:scale-110 transition-all duration-300">
+                    <div class="flex flex-wrap justify-center gap-3"> <!-- Slightly reduced gap -->
+                        <a href="https://www.instagram.com/prabhakarkumarmachvey/" target="_blank" class="group">
+                            <span class="flex items-center justify-center w-11 h-11 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors duration-300">
                                 <i class="fab fa-instagram text-lg"></i>
                             </span>
                         </a>
-                        <a href="https://www.facebook.com/prabhakarkumarmachvey/" target="_blank" class="group relative">
-                            <span class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-blue-700 opacity-0 group-hover:opacity-70 blur-md transition-all duration-300"></span>
-                            <span class="relative flex items-center justify-center w-12 h-12 rounded-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-10 border border-white border-opacity-20 text-white group-hover:transform group-hover:scale-110 transition-all duration-300">
+                        <a href="https://www.facebook.com/prabhakarkumarmachvey/" target="_blank" class="group">
+                            <span class="flex items-center justify-center w-11 h-11 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors duration-300">
                                 <i class="fab fa-facebook-f text-lg"></i>
                             </span>
                         </a>
-                        <a href="https://www.youtube.com/channel/UChRTKCXtT1nbfsXArw2Xxzg" target="_blank" class="group relative">
-                            <span class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-700 to-blue-500 opacity-0 group-hover:opacity-70 blur-md transition-all duration-300"></span>
-                            <span class="relative flex items-center justify-center w-12 h-12 rounded-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-10 border border-white border-opacity-20 text-white group-hover:transform group-hover:scale-110 transition-all duration-300">
+                        <a href="https://www.youtube.com/channel/UChRTKCXtT1nbfsXArw2Xxzg" target="_blank" class="group">
+                            <span class="flex items-center justify-center w-11 h-11 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors duration-300">
                                 <i class="fab fa-youtube text-lg"></i>
                             </span>
                         </a>
-                        <a href="https://www.threads.com/@prabhakarkumarmachvey" target="_blank" class="group relative">
-                            <span class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-70 blur-md transition-all duration-300"></span>
-                            <span class="relative flex items-center justify-center w-12 h-12 rounded-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-10 border border-white border-opacity-20 text-white group-hover:transform group-hover:scale-110 transition-all duration-300">
+                        <a href="https://www.threads.com/@prabhakarkumarmachvey" target="_blank" class="group">
+                            <span class="flex items-center justify-center w-11 h-11 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors duration-300">
                                 <i class="fab fa-threads text-lg"></i>
                             </span>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-white/10 pt-6">
-                <p class="text-center text-white/60">© 2025 Prabhakar Kumar Machvey. All rights reserved.</p>
+            <div class="border-t border-gray-300 pt-6">
+                <p class="text-center text-gray-500 text-sm md:text-base">© 2025 Prabhakar Kumar Machvey. All rights reserved.</p> <!-- Adjusted text color -->
             </div>
         </div>
     </footer>
 
     <!-- Back to top button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 w-14 h-14 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 group">
-        <!-- Gradient background -->
-        <div class="absolute inset-0 rounded-full bg-gradient-to-r from-primary-color to-secondary-color opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-        <!-- Glass effect -->
-        <div class="absolute inset-0 rounded-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-10 border border-white border-opacity-20"></div>
-
-        <!-- Icon -->
-        <i class="fas fa-arrow-up text-white text-lg relative z-10"></i>
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 rounded-full flex items-center justify-center shadow-md opacity-0 invisible transition-all duration-300 group bg-gray-700 hover:bg-gray-800"> <!-- Simplified button -->
+        <!-- Removed gradient and glass effect -->
+        <i class="fas fa-arrow-up text-white text-lg"></i>
     </button>
 
     <script>
